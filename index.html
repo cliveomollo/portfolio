@@ -98,8 +98,8 @@
                 <button onclick="toggleModal('pdf-modal')" class="px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-blue-500 hover:opacity-95 transition shadow-lg shadow-cyan-500/25 flex items-center gap-2">
                     <i class="fa-solid fa-eye"></i> Preview Full CV
                 </button>
-                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition flex items-center gap-2">
-                    <i class="fa-solid fa-calendar-check"></i> Book Consultation
+                <a href="Clive_Omollo_CV.pdf" download="Clive_Omollo_CV.pdf" class="px-6 py-3.5 rounded-xl font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition flex items-center gap-2">
+                    <i class="fa-solid fa-download"></i> Download CV
                 </a>
             </div>
         </div>
@@ -306,8 +306,8 @@
                 <button onclick="downloadVCard()" class="w-full py-4 rounded-xl font-semibold bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/20 transition flex items-center justify-center gap-2">
                     <i class="fa-solid fa-address-card text-lg"></i> Download Contact vCard File (.vcf)
                 </button>
-                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-calendar-check text-lg"></i> Schedule Online Meeting
+                <a href="Clive_Omollo_CV.pdf" download="Clive_Omollo_CV.pdf" class="w-full py-4 rounded-xl font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-file-arrow-down text-lg"></i> Download PDF Resume
                 </a>
             </div>
         </div>
@@ -355,7 +355,12 @@
         <div class="w-full max-w-5xl bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xl relative h-[85vh] flex flex-col">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                 <h3 class="font-bold text-cyan-400 font-mono">Clive_Omollo_CV.pdf</h3>
-                <button onclick="toggleModal('pdf-modal')" class="text-slate-400 hover:text-slate-100"><i class="fa-solid fa-xmark text-xl"></i></button>
+                <div class="flex items-center gap-3">
+                    <a href="Clive_Omollo_CV.pdf" download="Clive_Omollo_CV.pdf" class="px-3 py-1.5 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-xs font-mono hover:bg-cyan-500/20 transition flex items-center gap-1">
+                        <i class="fa-solid fa-download"></i> Save PDF
+                    </a>
+                    <button onclick="toggleModal('pdf-modal')" class="text-slate-400 hover:text-slate-100"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
             </div>
             <iframe src="Clive_Omollo_CV.pdf" class="w-full h-full rounded-xl bg-slate-950"></iframe>
         </div>
