@@ -35,6 +35,7 @@
                 <a href="#case-studies" class="hover:text-cyan-400 transition">Case Studies</a>
                 <a href="#education" class="hover:text-cyan-400 transition">Education</a>
                 <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+                <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
                 
                 <!-- Command Palette Trigger -->
                 <button onclick="toggleModal('command-palette')" class="px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 text-slate-300 font-mono text-xs hover:border-cyan-500/50 transition">
@@ -72,11 +73,31 @@
             <p class="max-w-2xl text-slate-400 text-lg">
                 Specializing in building robust IT infrastructure, direct host database administration, physical CCTV & RFID security architectures, and responsive web platforms.
             </p>
-            <div class="pt-4 flex flex-wrap gap-4">
+
+            <!-- Metrics Highlight Banner -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-4 max-w-3xl">
+                <div class="p-3 bg-slate-900/60 border border-slate-800 rounded-xl">
+                    <div class="text-2xl font-black text-cyan-400">150+</div>
+                    <div class="text-xs text-slate-400 font-mono">RFID Cards Configured</div>
+                </div>
+                <div class="p-3 bg-slate-900/60 border border-slate-800 rounded-xl">
+                    <div class="text-2xl font-black text-cyan-400">18 Floors</div>
+                    <div class="text-xs text-slate-400 font-mono">Intercom Network Managed</div>
+                </div>
+                <div class="p-3 bg-slate-900/60 border border-slate-800 rounded-xl">
+                    <div class="text-2xl font-black text-cyan-400">100%</div>
+                    <div class="text-xs text-slate-400 font-mono">ISP Uplink Operationality</div>
+                </div>
+                <div class="p-3 bg-slate-900/60 border border-slate-800 rounded-xl">
+                    <div class="text-2xl font-black text-cyan-400">Full Stack</div>
+                    <div class="text-xs text-slate-400 font-mono">Hosting & DB Administration</div>
+                </div>
+            </div>
+
+            <div class="pt-2 flex flex-wrap gap-4">
                 <button onclick="toggleModal('pdf-modal')" class="px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-blue-500 hover:opacity-95 transition shadow-lg shadow-cyan-500/25 flex items-center gap-2">
                     <i class="fa-solid fa-eye"></i> Preview Full CV
                 </button>
-                <!-- Corrected direct external booking link -->
                 <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition flex items-center gap-2">
                     <i class="fa-solid fa-calendar-check"></i> Book Consultation
                 </a>
@@ -125,8 +146,8 @@
                 </div>
                 <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
                     <li>Manage web hosting parameters, database instances via phpMyAdmin, and site security.</li>
-                    <li>Program RFID access control cards and administer tenant security matrices across multi-tenant properties.</li>
-                    <li>Maintain internal networking gear, router setups, and Wi-Fi access point deployments.</li>
+                    <li>Programmed and deployed 150+ RFID access control cards and administered tenant security matrices across multi-tenant properties.</li>
+                    <li>Maintain internal networking gear, router setups, and sky garden Wi-Fi access point deployments.</li>
                 </ul>
             </div>
 
@@ -140,9 +161,9 @@
                     <span class="px-3 py-1 bg-slate-800 rounded-full text-xs font-mono text-slate-400">2026 – Present</span>
                 </div>
                 <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
-                    <li>Audit CCTV camera configurations, NVR storage channels, and PTZ lens maintenance using Hikvision iVMS-4200.</li>
+                    <li>Audit CCTV camera configurations, NVR storage channels, and PTZ lens maintenance using Hikvision iVMS-4200 across Basement 3 to 18th floor.</li>
                     <li>Inspect and reconfigure 18-floor intercom network units and tenant entry keycards.</li>
-                    <li>Coordinate fiber optic cable restorations and ISP optical power level adjustments.</li>
+                    <li>Coordinate fiber optic cable restorations and ISP optical power level adjustments with Fimnet ISP.</li>
                 </ul>
             </div>
 
@@ -200,31 +221,42 @@
         </div>
     </section>
 
-    <!-- SECTION 5: EDUCATION BACKGROUND -->
+    <!-- SECTION 5: EDUCATION & CERTIFICATIONS -->
     <section id="education" class="py-20 border-t border-slate-800/60 max-w-7xl mx-auto px-6">
         <h2 class="text-3xl font-extrabold text-slate-100 mb-8 flex items-center gap-3">
-            <i class="fa-solid fa-graduation-cap text-cyan-400"></i> Educational Background
+            <i class="fa-solid fa-graduation-cap text-cyan-400"></i> Education & Certifications
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Degrees -->
+        <h3 class="text-lg font-bold text-slate-300 mb-4 font-mono">// ACADEMIC DEGREES</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
             <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl space-y-2">
-                <h3 class="font-bold text-lg text-slate-100">Bachelor of Science in Information Technology</h3>
+                <h4 class="font-bold text-lg text-slate-100">Bachelor of Science in Information Technology</h4>
                 <p class="text-cyan-400 text-sm">Kabarak University, Nakuru</p>
             </div>
             <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl space-y-2">
-                <h3 class="font-bold text-lg text-slate-100">Diploma in Information Technology</h3>
+                <h4 class="font-bold text-lg text-slate-100">Diploma in Information Technology</h4>
                 <p class="text-cyan-400 text-sm">Kabarak University, Nakuru</p>
             </div>
-            <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl space-y-2">
-                <h3 class="font-bold text-lg text-slate-100">Certificate in Python Programming</h3>
-                <p class="text-cyan-400 text-sm">Institute of Advanced Technology, Nairobi</p>
+        </div>
+
+        <!-- Certifications -->
+        <h3 class="text-lg font-bold text-slate-300 mb-4 font-mono">// PROFESSIONAL CERTIFICATIONS</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-6 bg-slate-900/60 border border-cyan-500/30 rounded-2xl space-y-2">
+                <div class="text-xs text-cyan-400 font-mono">CERTIFIED</div>
+                <h4 class="font-bold text-lg text-slate-100">Python Programming</h4>
+                <p class="text-slate-400 text-sm">Institute of Advanced Technology (IAT)</p>
+            </div>
+            <div class="p-6 bg-slate-900/60 border border-cyan-500/30 rounded-2xl space-y-2">
+                <div class="text-xs text-cyan-400 font-mono">CERTIFIED</div>
+                <h4 class="font-bold text-lg text-slate-100">Graphic Design</h4>
+                <p class="text-slate-400 text-sm">Institute of Advanced Technology (IAT)</p>
             </div>
             <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl space-y-2">
-                <h3 class="font-bold text-lg text-slate-100">Certificate in Graphic Design</h3>
-                <p class="text-cyan-400 text-sm">Institute of Advanced Technology, Nairobi</p>
-            </div>
-            <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl space-y-2 md:col-span-2">
-                <h3 class="font-bold text-lg text-slate-100">Kenya Certificate of Secondary Education (KCSE)</h3>
-                <p class="text-cyan-400 text-sm">Nyasanda Community High School, Kisumu</p>
+                <div class="text-xs text-slate-500 font-mono">SECONDARY EDUCATION</div>
+                <h4 class="font-bold text-lg text-slate-100">KCSE Certificate</h4>
+                <p class="text-slate-400 text-sm">Nyasanda Community High School</p>
             </div>
         </div>
     </section>
@@ -242,6 +274,42 @@
             <span class="px-4 py-2 bg-slate-900 border border-cyan-500/30 text-cyan-400 rounded-xl">PostgreSQL & pgAdmin 4</span>
             <span class="px-4 py-2 bg-slate-900 border border-cyan-500/30 text-cyan-400 rounded-xl">Python Automation</span>
             <span class="px-4 py-2 bg-slate-900 border border-cyan-500/30 text-cyan-400 rounded-xl">DirectAdmin Web Hosting</span>
+        </div>
+    </section>
+
+    <!-- SECTION 7: DIRECT CONTACT & INQUIRIES -->
+    <section id="contact" class="py-20 border-t border-slate-800/60 max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-extrabold text-slate-100 mb-8 flex items-center gap-3">
+            <i class="fa-solid fa-envelope text-cyan-400"></i> Direct Contact & Inquiries
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl space-y-6">
+                <p class="text-slate-300">
+                    Reach out directly for IT infrastructure consulting, web hosting configurations, or system deployment projects.
+                </p>
+                <div class="space-y-4 font-mono text-sm">
+                    <div class="flex items-center gap-3 text-slate-200">
+                        <i class="fa-solid fa-envelope text-cyan-400"></i>
+                        <span>omolloclive59@gmail.com</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-slate-200">
+                        <i class="fa-solid fa-phone text-cyan-400"></i>
+                        <span>0790295687</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-slate-200">
+                        <i class="fa-solid fa-location-dot text-cyan-400"></i>
+                        <span>Nairobi, Kenya</span>
+                    </div>
+                </div>
+            </div>
+            <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl flex flex-col justify-center gap-4">
+                <button onclick="downloadVCard()" class="w-full py-4 rounded-xl font-semibold bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/20 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-address-card text-lg"></i> Download Contact vCard File (.vcf)
+                </button>
+                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-calendar-check text-lg"></i> Schedule Online Meeting
+                </a>
+            </div>
         </div>
     </section>
 
@@ -268,6 +336,10 @@
                 </button>
                 <button onclick="navigateTo('#education')" class="w-full text-left p-2.5 rounded-lg hover:bg-slate-800 flex justify-between items-center text-slate-300">
                     <span><i class="fa-solid fa-graduation-cap mr-2 text-yellow-400"></i> Go to Education</span>
+                    <span class="text-slate-500">Jump</span>
+                </button>
+                <button onclick="navigateTo('#contact')" class="w-full text-left p-2.5 rounded-lg hover:bg-slate-800 flex justify-between items-center text-slate-300">
+                    <span><i class="fa-solid fa-envelope mr-2 text-cyan-400"></i> Go to Contact Info</span>
                     <span class="text-slate-500">Jump</span>
                 </button>
                 <button onclick="downloadVCard(); toggleModal('command-palette');" class="w-full text-left p-2.5 rounded-lg hover:bg-slate-800 flex justify-between items-center text-slate-300">
@@ -350,7 +422,8 @@ END:VCARD`;
                 let out = cmd === 'help' ? 'Commands: skills, experience, education, contact, clear' : 
                           (cmd === 'skills' ? 'Web Dev, MySQL, Hikvision CCTV, RFID, DirectAdmin' : 
                           (cmd === 'experience' ? 'Clemix Realtors (ICT Lead), The Saruni (Systems & Security), Sigraelfa' : 
-                          (cmd === 'education' ? 'BSc IT & Diploma IT (Kabarak University), Python & Graphic Design (IAT)' : 'Unknown command.')));
+                          (cmd === 'education' ? 'BSc IT & Diploma IT (Kabarak University), Python & Graphic Design (IAT)' : 
+                          (cmd === 'contact' ? 'Email: omolloclive59@gmail.com | Phone: 0790295687' : 'Unknown command.'))));
                 if (cmd === 'clear') { body.innerHTML = ''; return; }
                 body.innerHTML += `<p class="text-slate-400">${out}</p>`;
                 body.scrollTop = body.scrollHeight;
