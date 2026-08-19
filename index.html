@@ -6,8 +6,6 @@
     <title>Clive Omollo Nengo | ICT Lead & Systems Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -35,6 +33,7 @@
                 <a href="#experience" class="hover:text-cyan-400 transition">Experience</a>
                 <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
                 <a href="#case-studies" class="hover:text-cyan-400 transition">Case Studies</a>
+                <a href="#education" class="hover:text-cyan-400 transition">Education</a>
                 <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
                 
                 <!-- Command Palette Trigger -->
@@ -77,9 +76,10 @@
                 <button onclick="toggleModal('pdf-modal')" class="px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-blue-500 hover:opacity-95 transition shadow-lg shadow-cyan-500/25 flex items-center gap-2">
                     <i class="fa-solid fa-eye"></i> Preview Full CV
                 </button>
-                <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com'});return false;" class="px-6 py-3.5 rounded-xl font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition flex items-center gap-2">
+                <!-- Corrected direct external booking link -->
+                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition flex items-center gap-2">
                     <i class="fa-solid fa-calendar-check"></i> Book Consultation
-                </button>
+                </a>
             </div>
         </div>
     </section>
@@ -200,7 +200,36 @@
         </div>
     </section>
 
-    <!-- SECTION 5: TECHNICAL SKILLS -->
+    <!-- SECTION 5: EDUCATION BACKGROUND -->
+    <section id="education" class="py-20 border-t border-slate-800/60 max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-extrabold text-slate-100 mb-8 flex items-center gap-3">
+            <i class="fa-solid fa-graduation-cap text-cyan-400"></i> Educational Background
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl space-y-2">
+                <h3 class="font-bold text-lg text-slate-100">Bachelor of Science in Information Technology</h3>
+                <p class="text-cyan-400 text-sm">Kabarak University, Nakuru</p>
+            </div>
+            <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl space-y-2">
+                <h3 class="font-bold text-lg text-slate-100">Diploma in Information Technology</h3>
+                <p class="text-cyan-400 text-sm">Kabarak University, Nakuru</p>
+            </div>
+            <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl space-y-2">
+                <h3 class="font-bold text-lg text-slate-100">Certificate in Python Programming</h3>
+                <p class="text-cyan-400 text-sm">Institute of Advanced Technology, Nairobi</p>
+            </div>
+            <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl space-y-2">
+                <h3 class="font-bold text-lg text-slate-100">Certificate in Graphic Design</h3>
+                <p class="text-cyan-400 text-sm">Institute of Advanced Technology, Nairobi</p>
+            </div>
+            <div class="p-6 bg-slate-900/60 border border-slate-800 rounded-2xl space-y-2 md:col-span-2">
+                <h3 class="font-bold text-lg text-slate-100">Kenya Certificate of Secondary Education (KCSE)</h3>
+                <p class="text-cyan-400 text-sm">Nyasanda Community High School, Kisumu</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: TECHNICAL SKILLS -->
     <section id="skills" class="py-20 border-t border-slate-800/60 max-w-7xl mx-auto px-6">
         <h2 class="text-3xl font-extrabold text-slate-100 mb-8 flex items-center gap-3">
             <i class="fa-solid fa-layer-group text-cyan-400"></i> Technical Skill Matrix
@@ -237,6 +266,10 @@
                     <span><i class="fa-solid fa-code mr-2 text-emerald-400"></i> Go to Projects</span>
                     <span class="text-slate-500">Jump</span>
                 </button>
+                <button onclick="navigateTo('#education')" class="w-full text-left p-2.5 rounded-lg hover:bg-slate-800 flex justify-between items-center text-slate-300">
+                    <span><i class="fa-solid fa-graduation-cap mr-2 text-yellow-400"></i> Go to Education</span>
+                    <span class="text-slate-500">Jump</span>
+                </button>
                 <button onclick="downloadVCard(); toggleModal('command-palette');" class="w-full text-left p-2.5 rounded-lg hover:bg-slate-800 flex justify-between items-center text-slate-300">
                     <span><i class="fa-solid fa-address-card mr-2 text-purple-400"></i> Download Contact vCard</span>
                     <span class="text-slate-500">Download</span>
@@ -268,7 +301,7 @@
             </div>
             <div class="p-3 bg-slate-950 border-t border-slate-800 flex items-center gap-2">
                 <span class="text-cyan-400 font-bold">$</span>
-                <input id="terminal-input" type="text" onkeydown="handleTerminalCommand(event)" placeholder="type 'help', 'skills', 'experience'..." class="w-full bg-transparent text-slate-100 focus:outline-none font-mono">
+                <input id="terminal-input" type="text" onkeydown="handleTerminalCommand(event)" placeholder="type 'help', 'skills', 'education'..." class="w-full bg-transparent text-slate-100 focus:outline-none font-mono">
             </div>
         </div>
     </div>
@@ -314,9 +347,10 @@ END:VCARD`;
                 const body = document.getElementById('terminal-body');
                 body.innerHTML += `<p class="text-slate-100">$ ${input.value}</p>`;
                 input.value = '';
-                let out = cmd === 'help' ? 'Commands: skills, experience, contact, clear' : 
+                let out = cmd === 'help' ? 'Commands: skills, experience, education, contact, clear' : 
                           (cmd === 'skills' ? 'Web Dev, MySQL, Hikvision CCTV, RFID, DirectAdmin' : 
-                          (cmd === 'experience' ? 'Clemix Realtors (ICT Lead), The Saruni (Systems & Security), Sigraelfa' : 'Unknown command.'));
+                          (cmd === 'experience' ? 'Clemix Realtors (ICT Lead), The Saruni (Systems & Security), Sigraelfa' : 
+                          (cmd === 'education' ? 'BSc IT & Diploma IT (Kabarak University), Python & Graphic Design (IAT)' : 'Unknown command.')));
                 if (cmd === 'clear') { body.innerHTML = ''; return; }
                 body.innerHTML += `<p class="text-slate-400">${out}</p>`;
                 body.scrollTop = body.scrollHeight;
