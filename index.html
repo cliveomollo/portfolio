@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +12,16 @@
         tailwind.config = {
             darkMode: 'class',
             theme: {
-                extend: {
-                    colors: { primary: '#06b6d4', secondary: '#3b82f6' }
-                }
+                extend: { colors: { primary: '#06b6d4', secondary: '#3b82f6' } }
             }
         }
     </script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
+<body class="bg-slate-950 dark:bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 transition-colors duration-300">
 
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-8 right-8 bg-cyan-500 text-slate-950 px-5 py-3 rounded-xl font-mono text-sm font-bold shadow-xl translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-2">
-        <i class="fa-solid fa-circle-check"></i> <span id="toast-msg">Copied to clipboard!</span>
+    <!-- Keyboard Shortcut Banner -->
+    <div class="fixed bottom-4 left-6 z-40 hidden md:flex items-center gap-2 bg-slate-900/80 border border-slate-800 backdrop-blur px-3 py-1.5 rounded-lg text-xs font-mono text-slate-400">
+        <span>Press</span> <kbd class="px-1.5 py-0.5 bg-slate-800 text-cyan-400 rounded">Ctrl + K</kbd> <span>for Quick Navigation</span>
     </div>
 
     <!-- Navigation -->
@@ -32,16 +30,27 @@
             <a href="#" class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 CLIVE OMOLLO<span class="text-cyan-400">.</span>
             </a>
-            <div class="space-x-4 hidden lg:flex text-sm font-medium items-center">
+            <div class="space-x-3 hidden lg:flex text-sm font-medium items-center">
                 <a href="#topology" class="hover:text-cyan-400 transition">Topology</a>
                 <a href="#case-studies" class="hover:text-cyan-400 transition">Case Studies</a>
                 <a href="#calculator" class="hover:text-cyan-400 transition">Estimator</a>
-                <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
                 
+                <!-- Quick Command Palette Trigger -->
+                <button onclick="toggleModal('command-palette')" class="px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 text-slate-300 font-mono text-xs hover:border-cyan-500/50 transition">
+                    <i class="fa-solid fa-magnifying-glass mr-1"></i> Search <span class="opacity-50">(Ctrl+K)</span>
+                </button>
+
+                <!-- Save vCard Button -->
+                <button onclick="downloadVCard()" class="px-3 py-1.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 font-mono text-xs hover:bg-emerald-500/20 transition">
+                    <i class="fa-solid fa-address-card mr-1"></i> Save Contact
+                </button>
+
+                <!-- CLI Modal Trigger -->
                 <button onclick="toggleTerminal()" class="px-3 py-1.5 rounded-lg border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 font-mono text-xs hover:bg-cyan-500/20 transition">
                     <i class="fa-solid fa-terminal mr-1"></i> >_ CLI
                 </button>
 
+                <!-- View CV PDF Modal Trigger -->
                 <button onclick="toggleModal('pdf-modal')" class="px-3 py-1.5 rounded-lg border border-cyan-500/50 text-cyan-400 font-mono text-xs hover:bg-cyan-500/10 transition">
                     <i class="fa-solid fa-file-pdf mr-1"></i> View CV
                 </button>
@@ -70,11 +79,11 @@
         </div>
     </section>
 
-    <!-- Feature 1: Live Endpoint Latency & Health Monitor -->
+    <!-- Live Latency Monitor -->
     <section class="py-12 bg-slate-900/60 border-y border-slate-800/60">
         <div class="max-w-7xl mx-auto px-6 space-y-4">
             <div class="flex justify-between items-center">
-                <h3 class="text-xs font-mono text-cyan-400 font-bold uppercase tracking-widest"><i class="fa-solid fa-bolt mr-2"></i> Real-Time Endpoint Latency Test</h3>
+                <h3 class="text-xs font-mono text-cyan-400 font-bold uppercase tracking-widest"><i class="fa-solid fa-bolt mr-2"></i> Endpoint Latency Test</h3>
                 <button onclick="runLatencyCheck()" class="text-xs font-mono bg-slate-800 hover:bg-slate-700 px-3 py-1 rounded text-slate-300 transition">Ping Servers</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
@@ -94,113 +103,36 @@
         </div>
     </section>
 
-    <!-- Feature 2: Network Topology Architecture -->
-    <section id="topology" class="py-24 px-6 max-w-7xl mx-auto space-y-8">
-        <div class="space-y-2">
-            <h3 class="text-2xl font-bold font-mono text-slate-100"><span class="text-cyan-400">01.</span> Property Network & Security Blueprint</h3>
-            <p class="text-slate-400 text-sm">Visual architecture of implemented fiber, access control, and CCTV routing.</p>
-        </div>
-        <div class="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 overflow-x-auto">
-            <div class="min-w-[700px] flex items-center justify-between gap-4 font-mono text-xs text-center">
-                <div class="p-4 rounded-xl bg-slate-950 border border-cyan-500/40 w-40 space-y-2">
-                    <i class="fa-solid fa-globe text-2xl text-cyan-400"></i>
-                    <p class="font-bold">ISP Fiber Link</p>
-                    <p class="text-[10px] text-slate-500">Fimnet Backbone</p>
-                </div>
-                <i class="fa-solid fa-arrow-right text-slate-600"></i>
-                <div class="p-4 rounded-xl bg-slate-950 border border-blue-500/40 w-40 space-y-2">
-                    <i class="fa-solid fa-network-wired text-2xl text-blue-400"></i>
-                    <p class="font-bold">Core Router</p>
-                    <p class="text-[10px] text-slate-500">Subnet Management</p>
-                </div>
-                <i class="fa-solid fa-arrow-right text-slate-600"></i>
-                <div class="p-4 rounded-xl bg-slate-950 border border-purple-500/40 w-40 space-y-2">
-                    <i class="fa-solid fa-server text-2xl text-purple-400"></i>
-                    <p class="font-bold">Hikvision NVR</p>
-                    <p class="text-[10px] text-slate-500">iVMS-4200 Storage</p>
-                </div>
-                <i class="fa-solid fa-arrow-right text-slate-600"></i>
-                <div class="p-4 rounded-xl bg-slate-950 border border-emerald-500/40 w-40 space-y-2">
-                    <i class="fa-solid fa-door-closed text-2xl text-emerald-400"></i>
-                    <p class="font-bold">Access Control</p>
-                    <p class="text-[10px] text-slate-500">150+ RFID / Intercoms</p>
-                </div>
+    <!-- Command Palette Modal (Ctrl + K) -->
+    <div id="command-palette" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden z-50 flex items-start justify-center pt-24 p-4">
+        <div class="w-full max-w-xl bg-slate-900 border border-cyan-500/40 rounded-2xl p-4 shadow-2xl font-mono text-sm space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-800 pb-3 px-2">
+                <i class="fa-solid fa-magnifying-glass text-cyan-400"></i>
+                <input id="palette-input" type="text" placeholder="Type a command or section..." class="w-full bg-transparent text-slate-100 focus:outline-none">
+                <button onclick="toggleModal('command-palette')" class="text-xs text-slate-500 hover:text-slate-300">ESC</button>
+            </div>
+            <div class="space-y-2 text-xs">
+                <button onclick="navigateTo('#topology')" class="w-full text-left p-2.5 rounded-lg hover:bg-slate-800 flex justify-between items-center text-slate-300">
+                    <span><i class="fa-solid fa-network-wired mr-2 text-cyan-400"></i> Go to Network Blueprint</span>
+                    <span class="text-slate-500">Jump</span>
+                </button>
+                <button onclick="navigateTo('#case-studies')" class="w-full text-left p-2.5 rounded-lg hover:bg-slate-800 flex justify-between items-center text-slate-300">
+                    <span><i class="fa-solid fa-folder-open mr-2 text-blue-400"></i> Go to Case Studies</span>
+                    <span class="text-slate-500">Jump</span>
+                </button>
+                <button onclick="toggleTerminal(); toggleModal('command-palette');" class="w-full text-left p-2.5 rounded-lg hover:bg-slate-800 flex justify-between items-center text-slate-300">
+                    <span><i class="fa-solid fa-terminal mr-2 text-emerald-400"></i> Open Interactive CLI Terminal</span>
+                    <span class="text-slate-500">Launch</span>
+                </button>
+                <button onclick="downloadVCard(); toggleModal('command-palette');" class="w-full text-left p-2.5 rounded-lg hover:bg-slate-800 flex justify-between items-center text-slate-300">
+                    <span><i class="fa-solid fa-address-card mr-2 text-purple-400"></i> Download Contact vCard</span>
+                    <span class="text-slate-500">Download</span>
+                </button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Feature 3: Before / After Case Studies -->
-    <section id="case-studies" class="py-24 px-6 bg-slate-900/30 border-t border-slate-800/60">
-        <div class="max-w-7xl mx-auto space-y-8">
-            <h3 class="text-2xl font-bold font-mono text-slate-100"><span class="text-cyan-400">02.</span> System Case Studies</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 space-y-4">
-                    <span class="text-xs font-mono text-cyan-400 font-bold">CASE STUDY #1</span>
-                    <h4 class="text-xl font-bold">18-Floor CCTV & Intercom Realignment</h4>
-                    <div class="grid grid-cols-2 gap-4 text-xs font-mono pt-2">
-                        <div class="p-3 rounded-lg bg-red-950/30 border border-red-800/40 text-red-300">
-                            <p class="font-bold mb-1">Before:</p>
-                            <p>Camera blind spots, unmapped channel feeds, and intercom digit configuration errors.</p>
-                        </div>
-                        <div class="p-3 rounded-lg bg-emerald-950/30 border border-emerald-800/40 text-emerald-300">
-                            <p class="font-bold mb-1">After:</p>
-                            <p>Cleaned PTZ lenses, corrected unit digits, and 100% floor-to-NVR mapping.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 space-y-4">
-                    <span class="text-xs font-mono text-blue-400 font-bold">CASE STUDY #2</span>
-                    <h4 class="text-xl font-bold">Corporate Web & DirectAdmin Optimization</h4>
-                    <div class="grid grid-cols-2 gap-4 text-xs font-mono pt-2">
-                        <div class="p-3 rounded-lg bg-red-950/30 border border-red-800/40 text-red-300">
-                            <p class="font-bold mb-1">Before:</p>
-                            <p>Unstructured database links, high load times, and manual user management.</p>
-                        </div>
-                        <div class="p-3 rounded-lg bg-emerald-950/30 border border-emerald-800/40 text-emerald-300">
-                            <p class="font-bold mb-1">After:</p>
-                            <p>Automated MySQL structure, direct hosting controls, and 99.9% uptime.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Feature 4: ICT Service & Budget Estimator -->
-    <section id="calculator" class="py-24 px-6 max-w-4xl mx-auto space-y-8">
-        <div class="text-center space-y-2">
-            <h3 class="text-3xl font-extrabold text-slate-100">ICT Service & Scope Estimator</h3>
-            <p class="text-slate-400 text-sm">Select project requirements for an instant consultation estimate.</p>
-        </div>
-
-        <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 space-y-6 font-mono text-sm">
-            <div class="space-y-3">
-                <label class="text-xs text-slate-400">SELECT REQUIRED SERVICES:</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" value="300" onchange="calculateEstimate()" class="service-calc accent-cyan-400"> Web Development & Hosting
-                    </label>
-                    <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" value="400" onchange="calculateEstimate()" class="service-calc accent-cyan-400"> CCTV & NVR Configuration
-                    </label>
-                    <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" value="250" onchange="calculateEstimate()" class="service-calc accent-cyan-400"> Access Control & Key Cards
-                    </label>
-                    <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" value="200" onchange="calculateEstimate()" class="service-calc accent-cyan-400"> Network & Fiber Setup
-                    </label>
-                </div>
-            </div>
-
-            <div class="p-4 rounded-xl bg-slate-950 border border-cyan-500/40 flex justify-between items-center">
-                <span>ESTIMATED SCOPE:</span>
-                <span id="estimated-total" class="text-xl font-bold text-cyan-400">$0 USD</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Inline PDF Resume Viewer Modal -->
+    <!-- PDF Resume Viewer Modal -->
     <div id="pdf-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
         <div class="w-full max-w-5xl bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xl relative h-[85vh] flex flex-col">
             <div class="flex justify-between items-center border-b border-slate-800 pb-3">
@@ -232,10 +164,34 @@
         function toggleModal(id) { document.getElementById(id).classList.toggle('hidden'); }
         function toggleTerminal() { toggleModal('terminal-modal'); }
 
-        function calculateEstimate() {
-            let total = 0;
-            document.querySelectorAll('.service-calc:checked').forEach(cb => total += parseInt(cb.value));
-            document.getElementById('estimated-total').innerText = `$${total} USD`;
+        function navigateTo(hash) {
+            toggleModal('command-palette');
+            window.location.hash = hash;
+        }
+
+        // Global Keyboard Shortcut (Ctrl+K or Cmd+K)
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                toggleModal('command-palette');
+            }
+        });
+
+        // Download vCard Function
+        function downloadVCard() {
+            const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Clive Omollo Nengo
+TITLE:Customer Relationship Officer & ICT Lead
+EMAIL:omolloclive59@gmail.com
+TEL:+254790295687
+END:VCARD`;
+            const blob = new Blob([vcardData], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Clive_Omollo.vcf';
+            a.click();
         }
 
         function runLatencyCheck() {
