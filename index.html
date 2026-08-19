@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -21,22 +22,35 @@
         }
     </script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-8 right-8 bg-cyan-500 text-slate-950 px-5 py-3 rounded-xl font-mono text-sm font-bold shadow-xl translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check"></i> <span id="toast-msg">Copied to clipboard!</span>
+    </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-slate-950/80 backdrop-blur-lg border-b border-slate-800/60 z-50">
+    <nav class="fixed top-0 w-full bg-slate-950/80 backdrop-blur-lg border-b border-slate-800/60 z-40">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 CLIVE OMOLLO<span class="text-cyan-400">.</span>
             </a>
-            <div class="space-x-8 hidden md:flex text-sm font-medium items-center">
+            <div class="space-x-6 hidden md:flex text-sm font-medium items-center">
                 <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
                 <a href="#education" class="hover:text-cyan-400 transition-colors">Education</a>
                 <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
                 <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
                 <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#testimonials" class="hover:text-cyan-400 transition-colors">References</a>
                 <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
-                <a href="Clive_Omollo_CV.pdf" download class="px-4 py-2 rounded-lg text-xs font-mono font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition">
+                
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2 rounded-lg border border-slate-800 hover:border-cyan-400/50 text-slate-400 hover:text-cyan-400 transition">
+                    <i id="theme-icon" class="fa-solid fa-sun"></i>
+                </button>
+
+                <!-- CV Link -->
+                <a href="Clive_Omollo_CV.pdf" target="_blank" download class="px-4 py-2 rounded-lg text-xs font-mono font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition">
                     <i class="fa-solid fa-download mr-1"></i> CV
                 </a>
             </div>
@@ -66,7 +80,7 @@
                     View My Work 
                     <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                 </a>
-                <a href="Clive_Omollo_CV.pdf" download class="px-6 py-3.5 rounded-xl font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition bg-slate-900/50 backdrop-blur-sm flex items-center gap-2">
+                <a href="Clive_Omollo_CV.pdf" target="_blank" download class="px-6 py-3.5 rounded-xl font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition bg-slate-900/50 backdrop-blur-sm flex items-center gap-2">
                     <i class="fa-solid fa-file-arrow-down"></i> Download CV
                 </a>
             </div>
@@ -223,9 +237,8 @@
                 <span class="text-cyan-400 font-mono text-lg">04.</span> Technical Capabilities
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Skill Card 1 -->
-                <div class="group p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/10">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div class="group p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-6">
                         <i class="fa-solid fa-code text-2xl text-cyan-400"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-4">Web Development</h4>
@@ -233,13 +246,11 @@
                         <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> PHP / Custom WordPress Themes</li>
                         <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> JavaScript / HTML5 / CSS3</li>
                         <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> DirectAdmin / cPanel Administration</li>
-                        <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Server & Domain Operations</li>
                     </ul>
                 </div>
 
-                <!-- Skill Card 2 -->
-                <div class="group p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/10">
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div class="group p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6">
                         <i class="fa-solid fa-database text-2xl text-blue-400"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-4">Databases & Systems</h4>
@@ -247,13 +258,11 @@
                         <li class="flex items-center gap-2"><span class="text-blue-400">▹</span> MySQL / phpMyAdmin Management</li>
                         <li class="flex items-center gap-2"><span class="text-blue-400">▹</span> PostgreSQL / pgAdmin 4 Setup</li>
                         <li class="flex items-center gap-2"><span class="text-blue-400">▹</span> Data Mining & Privacy Concepts</li>
-                        <li class="flex items-center gap-2"><span class="text-blue-400">▹</span> Database Backups & Optimization</li>
                     </ul>
                 </div>
 
-                <!-- Skill Card 3 -->
-                <div class="group p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/10">
-                    <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div class="group p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-6">
                         <i class="fa-solid fa-network-wired text-2xl text-teal-400"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-4">Networking & Security</h4>
@@ -261,23 +270,32 @@
                         <li class="flex items-center gap-2"><span class="text-teal-400">▹</span> Hikvision iVMS-4200 / SADP / NVR</li>
                         <li class="flex items-center gap-2"><span class="text-teal-400">▹</span> Building Intercom Network Audits</li>
                         <li class="flex items-center gap-2"><span class="text-teal-400">▹</span> RFID Access Control Systems</li>
-                        <li class="flex items-center gap-2"><span class="text-teal-400">▹</span> Fiber Extensions & Access Points</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section with Interactive Filter -->
     <section id="projects" class="py-24 px-6 border-t border-slate-800/60">
         <div class="max-w-6xl mx-auto space-y-12">
-            <h3 class="text-2xl font-bold text-slate-100 flex items-center gap-3">
-                <span class="text-cyan-400 font-mono text-lg">05.</span> Featured Projects & Operations
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <h3 class="text-2xl font-bold text-slate-100 flex items-center gap-3">
+                    <span class="text-cyan-400 font-mono text-lg">05.</span> Featured Projects
+                </h3>
                 
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                    <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-lg bg-cyan-500 text-slate-950 font-bold transition">All</button>
+                    <button onclick="filterProjects('web')" class="filter-btn px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 transition">Web & DB</button>
+                    <button onclick="filterProjects('security')" class="filter-btn px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 transition">Security & CCTV</button>
+                    <button onclick="filterProjects('access')" class="filter-btn px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 transition">Networking & Access</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="group rounded-2xl bg-slate-900/40 border border-slate-800 overflow-hidden hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between">
+                <div class="project-card web group rounded-2xl bg-slate-900/40 border border-slate-800 overflow-hidden hover:border-slate-700 transition-all duration-300 flex flex-col justify-between">
                     <div class="p-8 space-y-4">
                         <div class="flex justify-between items-center">
                             <span class="text-xs font-mono font-semibold text-cyan-400 tracking-wider">WEB & HOSTING</span>
@@ -296,7 +314,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="group rounded-2xl bg-slate-900/40 border border-slate-800 overflow-hidden hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between">
+                <div class="project-card security group rounded-2xl bg-slate-900/40 border border-slate-800 overflow-hidden hover:border-slate-700 transition-all duration-300 flex flex-col justify-between">
                     <div class="p-8 space-y-4">
                         <div class="flex justify-between items-center">
                             <span class="text-xs font-mono font-semibold text-blue-400 tracking-wider">SECURITY & SURVEILLANCE</span>
@@ -315,7 +333,7 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="group rounded-2xl bg-slate-900/40 border border-slate-800 overflow-hidden hover:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl flex flex-col justify-between">
+                <div class="project-card access group rounded-2xl bg-slate-900/40 border border-slate-800 overflow-hidden hover:border-slate-700 transition-all duration-300 flex flex-col justify-between">
                     <div class="p-8 space-y-4">
                         <div class="flex justify-between items-center">
                             <span class="text-xs font-mono font-semibold text-teal-400 tracking-wider">ACCESS CONTROL</span>
@@ -332,13 +350,44 @@
                         <span class="bg-slate-800/60 border border-slate-700/50 px-3 py-1 rounded-full">Fiber/AP</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Testimonials / References Section -->
+    <section id="testimonials" class="py-24 px-6 bg-slate-900/30 border-t border-slate-800/60">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <h3 class="text-2xl font-bold text-slate-100 flex items-center gap-3">
+                <span class="text-cyan-400 font-mono text-lg">06.</span> References & Endorsements
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 space-y-4">
+                    <i class="fa-solid fa-quote-left text-3xl text-cyan-400/40"></i>
+                    <p class="text-slate-300 text-sm leading-relaxed italic">
+                        "Clive has demonstrated exceptional technical expertise in managing our web platforms and site operations. His attention to detail in network infrastructure and client systems is outstanding."
+                    </p>
+                    <div>
+                        <h5 class="font-bold text-slate-200">Management Team</h5>
+                        <p class="text-xs font-mono text-cyan-400">Clemix Realtors Ltd</p>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 space-y-4">
+                    <i class="fa-solid fa-quote-left text-3xl text-blue-400/40"></i>
+                    <p class="text-slate-300 text-sm leading-relaxed italic">
+                        "Reliable and highly capable across multi-floor CCTV operations, Hikvision intercom configurations, and security hardware deployment across all building units."
+                    </p>
+                    <div>
+                        <h5 class="font-bold text-slate-200">Building Operations</h5>
+                        <p class="text-xs font-mono text-blue-400">The Saruni Apartments</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Interactive Contact Section -->
-    <section id="contact" class="py-24 px-6 bg-slate-900/30 border-t border-slate-800/60 relative">
+    <section id="contact" class="py-24 px-6 border-t border-slate-800/60 relative">
         <div class="max-w-3xl mx-auto space-y-8">
             <div class="text-center space-y-3">
                 <h3 class="text-3xl md:text-4xl font-extrabold text-slate-100">Let's Work Together</h3>
@@ -368,22 +417,89 @@
             </form>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto pt-4 text-center">
-                <a href="mailto:omolloclive59@gmail.com" class="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition flex items-center justify-center gap-3 text-slate-300 hover:text-cyan-400 group">
+                <button onclick="copyToClipboard('omolloclive59@gmail.com', 'Email copied to clipboard!')" class="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition flex items-center justify-center gap-3 text-slate-300 hover:text-cyan-400 group">
                     <i class="fa-solid fa-envelope text-cyan-400 text-lg group-hover:scale-110 transition-transform"></i>
                     <span class="font-mono text-sm">omolloclive59@gmail.com</span>
-                </a>
-                <a href="tel:+254790295687" class="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition flex items-center justify-center gap-3 text-slate-300 hover:text-cyan-400 group">
+                </button>
+                <button onclick="copyToClipboard('+254790295687', 'Phone number copied to clipboard!')" class="p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition flex items-center justify-center gap-3 text-slate-300 hover:text-cyan-400 group">
                     <i class="fa-solid fa-phone text-cyan-400 text-lg group-hover:scale-110 transition-transform"></i>
                     <span class="font-mono text-sm">+254 790 295 687</span>
-                </a>
+                </button>
             </div>
         </div>
     </section>
+
+    <!-- Floating Back to Top Button -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 left-8 p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 transition opacity-0 translate-y-10 z-40">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <!-- Footer -->
     <footer class="py-8 text-center text-xs font-mono text-slate-500 border-t border-slate-900">
         <p>© 2026 Clive Omollo Nengo. All rights reserved.</p>
     </footer>
 
+    <!-- Interactive Scripts -->
+    <script>
+        // Copy to clipboard & Toast
+        function copyToClipboard(text, msg) {
+            navigator.clipboard.writeText(text);
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Project Filter
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            btns.forEach(btn => {
+                btn.classList.remove('bg-cyan-500', 'text-slate-950', 'font-bold');
+                btn.classList.add('bg-slate-900', 'text-slate-400');
+            });
+            event.target.classList.add('bg-cyan-500', 'text-slate-950', 'font-bold');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Back to Top Visibility
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('back-to-top');
+            if (window.scrollY > 400) {
+                btn.classList.remove('opacity-0', 'translate-y-10');
+            } else {
+                btn.classList.add('opacity-0', 'translate-y-10');
+            }
+        });
+
+        // Theme Switcher
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                document.body.classList.remove('bg-slate-950', 'text-slate-100');
+                document.body.classList.add('bg-slate-100', 'text-slate-900');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                document.body.classList.remove('bg-slate-100', 'text-slate-900');
+                document.body.classList.add('bg-slate-950', 'text-slate-100');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
+    </script>
 </body>
 </html>
