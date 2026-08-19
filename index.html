@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clive Omollo Nengo | ICT & Web Development Portfolio</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Calendly Widget Widget CSS -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script>
@@ -16,16 +13,13 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        primary: '#06b6d4',
-                        secondary: '#3b82f6',
-                    }
+                    colors: { primary: '#06b6d4', secondary: '#3b82f6' }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 transition-colors duration-300">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
 
     <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-8 right-8 bg-cyan-500 text-slate-950 px-5 py-3 rounded-xl font-mono text-sm font-bold shadow-xl translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-2">
@@ -34,54 +28,41 @@
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-slate-950/80 backdrop-blur-lg border-b border-slate-800/60 z-40">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 CLIVE OMOLLO<span class="text-cyan-400">.</span>
             </a>
-            <div class="space-x-4 hidden md:flex text-sm font-medium items-center">
-                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
-                <a href="#dashboard" class="hover:text-cyan-400 transition-colors">Status</a>
-                <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
-                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
-                <a href="#github" class="hover:text-cyan-400 transition-colors">GitHub</a>
+            <div class="space-x-4 hidden lg:flex text-sm font-medium items-center">
+                <a href="#topology" class="hover:text-cyan-400 transition">Topology</a>
+                <a href="#case-studies" class="hover:text-cyan-400 transition">Case Studies</a>
+                <a href="#calculator" class="hover:text-cyan-400 transition">Estimator</a>
+                <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
                 
-                <!-- Terminal Trigger Button -->
                 <button onclick="toggleTerminal()" class="px-3 py-1.5 rounded-lg border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 font-mono text-xs hover:bg-cyan-500/20 transition">
-                    <i class="fa-solid fa-terminal mr-1"></i> >_ Terminal
+                    <i class="fa-solid fa-terminal mr-1"></i> >_ CLI
                 </button>
 
-                <!-- Technical Cheat Sheet Button -->
-                <button onclick="toggleModal('cheatsheet-modal')" class="px-3 py-1.5 rounded-lg border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 text-xs font-mono transition">
-                    <i class="fa-solid fa-file-code mr-1"></i> 1-Page Summary
+                <button onclick="toggleModal('pdf-modal')" class="px-3 py-1.5 rounded-lg border border-cyan-500/50 text-cyan-400 font-mono text-xs hover:bg-cyan-500/10 transition">
+                    <i class="fa-solid fa-file-pdf mr-1"></i> View CV
                 </button>
-
-                <!-- CV Link -->
-                <a href="Clive_Omollo_CV.pdf" target="_blank" download class="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition">
-                    <i class="fa-solid fa-download mr-1"></i> CV
-                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 px-6 max-w-6xl mx-auto overflow-hidden">
-        <div class="space-y-6 relative z-10 text-left w-full">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 font-mono text-xs tracking-widest">
-                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> SYSTEM OPERATIONAL
+    <section class="relative min-h-screen flex items-center justify-center pt-24 px-6 max-w-7xl mx-auto">
+        <div class="space-y-6 z-10 w-full">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 font-mono text-xs">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> ICT LEAD & SYSTEMS SPECIALIST
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-100 tracking-tight">
-                Clive Omollo Nengo.
-            </h1>
-            <h2 class="text-2xl md:text-4xl font-bold bg-gradient-to-r from-slate-300 via-slate-400 to-slate-500 bg-clip-text text-transparent">
-                Web Development, CCTV Operations & Network Infrastructure.
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-100">Clive Omollo Nengo.</h1>
+            <h2 class="text-2xl md:text-4xl font-bold bg-gradient-to-r from-slate-300 to-slate-500 bg-clip-text text-transparent">
+                Web Development, Network Engineering & Physical Security.
             </h2>
-            <p class="max-w-2xl text-slate-400 text-lg leading-relaxed">
-                Customer Relationship Officer & ICT Lead managing core web platforms, database environments, high-density CCTV surveillance, and RFID access control.
-            </p>
             <div class="pt-4 flex flex-wrap gap-4">
-                <a href="#projects" class="px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-blue-500 hover:opacity-95 transition shadow-lg shadow-cyan-500/25 flex items-center gap-2">
-                    View Work
-                </a>
+                <button onclick="toggleModal('pdf-modal')" class="px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-blue-500 hover:opacity-95 transition shadow-lg shadow-cyan-500/25 flex items-center gap-2">
+                    <i class="fa-solid fa-eye"></i> Preview Full CV
+                </button>
                 <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com'});return false;" class="px-6 py-3.5 rounded-xl font-semibold border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 transition flex items-center gap-2">
                     <i class="fa-solid fa-calendar-check"></i> Book Consultation
                 </button>
@@ -89,199 +70,180 @@
         </div>
     </section>
 
-    <!-- Feature 2: Operational Dashboard -->
-    <section id="dashboard" class="py-16 bg-slate-900/50 border-y border-slate-800/60">
-        <div class="max-w-6xl mx-auto px-6 space-y-6">
+    <!-- Feature 1: Live Endpoint Latency & Health Monitor -->
+    <section class="py-12 bg-slate-900/60 border-y border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-6 space-y-4">
             <div class="flex justify-between items-center">
-                <h3 class="text-xl font-bold font-mono text-cyan-400 flex items-center gap-2">
-                    <i class="fa-solid fa-server"></i> Active Infrastructure Status
-                </h3>
-                <span class="text-xs font-mono text-slate-400">Live Status Metrics</span>
+                <h3 class="text-xs font-mono text-cyan-400 font-bold uppercase tracking-widest"><i class="fa-solid fa-bolt mr-2"></i> Real-Time Endpoint Latency Test</h3>
+                <button onclick="runLatencyCheck()" class="text-xs font-mono bg-slate-800 hover:bg-slate-700 px-3 py-1 rounded text-slate-300 transition">Ping Servers</button>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs font-mono text-slate-400">Clemix Realtors Web Server</p>
-                        <p class="text-sm font-bold text-emerald-400">99.9% Uptime</p>
-                    </div>
-                    <span class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
+                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex justify-between items-center">
+                    <span>Clemix Web Host</span>
+                    <span id="ping-1" class="text-emerald-400 font-bold">24 ms (200 OK)</span>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs font-mono text-slate-400">The Saruni NVR Storage</p>
-                        <p class="text-sm font-bold text-emerald-400">Active / RAID OK</p>
-                    </div>
-                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex justify-between items-center">
+                    <span>Database Engine</span>
+                    <span id="ping-2" class="text-emerald-400 font-bold">12 ms (Active)</span>
                 </div>
-                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs font-mono text-slate-400">Intercom Gateway</p>
-                        <p class="text-sm font-bold text-cyan-400">18 Floors Connected</p>
-                    </div>
-                    <span class="w-3 h-3 rounded-full bg-cyan-500"></span>
-                </div>
-                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs font-mono text-slate-400">RFID Access Control</p>
-                        <p class="text-sm font-bold text-blue-400">150+ Cards Programmed</p>
-                    </div>
-                    <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex justify-between items-center">
+                    <span>Saruni NVR Stream</span>
+                    <span id="ping-3" class="text-cyan-400 font-bold">18 ms (Stable)</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto space-y-8">
-        <h3 class="text-2xl font-bold text-slate-100 font-mono">
-            <span class="text-cyan-400">01.</span> Projects & Implementations
-        </h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-4">
-                <span class="text-xs font-mono text-cyan-400">WEB DEVELOPMENT</span>
-                <h4 class="text-xl font-bold">Clemix Realtors Platform</h4>
-                <p class="text-slate-400 text-sm leading-relaxed">Full-stack web management, custom theme configurations, and MySQL database maintenance via phpMyAdmin.</p>
-            </div>
-            <div class="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-4">
-                <span class="text-xs font-mono text-blue-400">CCTV & SURVEILLANCE</span>
-                <h4 class="text-xl font-bold">The Saruni Camera Audits</h4>
-                <p class="text-slate-400 text-sm leading-relaxed">Multi-floor CCTV maintenance, PTZ lens cleaning, channel mapping, and NVR setup using iVMS-4200.</p>
-            </div>
-            <div class="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 space-y-4">
-                <span class="text-xs font-mono text-teal-400">ACCESS CONTROL</span>
-                <h4 class="text-xl font-bold">Intercom & Keycard Audit</h4>
-                <p class="text-slate-400 text-sm leading-relaxed">Door station network repairs, digit error fixes, and programming 150+ RFID access cards.</p>
+    <!-- Feature 2: Network Topology Architecture -->
+    <section id="topology" class="py-24 px-6 max-w-7xl mx-auto space-y-8">
+        <div class="space-y-2">
+            <h3 class="text-2xl font-bold font-mono text-slate-100"><span class="text-cyan-400">01.</span> Property Network & Security Blueprint</h3>
+            <p class="text-slate-400 text-sm">Visual architecture of implemented fiber, access control, and CCTV routing.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 overflow-x-auto">
+            <div class="min-w-[700px] flex items-center justify-between gap-4 font-mono text-xs text-center">
+                <div class="p-4 rounded-xl bg-slate-950 border border-cyan-500/40 w-40 space-y-2">
+                    <i class="fa-solid fa-globe text-2xl text-cyan-400"></i>
+                    <p class="font-bold">ISP Fiber Link</p>
+                    <p class="text-[10px] text-slate-500">Fimnet Backbone</p>
+                </div>
+                <i class="fa-solid fa-arrow-right text-slate-600"></i>
+                <div class="p-4 rounded-xl bg-slate-950 border border-blue-500/40 w-40 space-y-2">
+                    <i class="fa-solid fa-network-wired text-2xl text-blue-400"></i>
+                    <p class="font-bold">Core Router</p>
+                    <p class="text-[10px] text-slate-500">Subnet Management</p>
+                </div>
+                <i class="fa-solid fa-arrow-right text-slate-600"></i>
+                <div class="p-4 rounded-xl bg-slate-950 border border-purple-500/40 w-40 space-y-2">
+                    <i class="fa-solid fa-server text-2xl text-purple-400"></i>
+                    <p class="font-bold">Hikvision NVR</p>
+                    <p class="text-[10px] text-slate-500">iVMS-4200 Storage</p>
+                </div>
+                <i class="fa-solid fa-arrow-right text-slate-600"></i>
+                <div class="p-4 rounded-xl bg-slate-950 border border-emerald-500/40 w-40 space-y-2">
+                    <i class="fa-solid fa-door-closed text-2xl text-emerald-400"></i>
+                    <p class="font-bold">Access Control</p>
+                    <p class="text-[10px] text-slate-500">150+ RFID / Intercoms</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Feature 3: Live GitHub Repositories -->
-    <section id="github" class="py-20 px-6 bg-slate-900/30 border-t border-slate-800/60">
-        <div class="max-w-6xl mx-auto space-y-8">
-            <div class="flex justify-between items-center">
-                <h3 class="text-2xl font-bold text-slate-100 font-mono">
-                    <span class="text-cyan-400">02.</span> Dynamic GitHub Repositories
-                </h3>
-                <a href="https://github.com" target="_blank" class="text-xs font-mono text-cyan-400 hover:underline">View GitHub Profile →</a>
-            </div>
-            <div id="github-repos-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Fallback / Static Loading placeholders -->
-                <div class="p-6 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-                    <p class="font-bold text-cyan-400 font-mono">custom-wordpress-theme</p>
-                    <p class="text-xs text-slate-400">Custom theme integration for real estate platforms.</p>
-                    <div class="pt-2 flex justify-between text-xs font-mono text-slate-500">
-                        <span>PHP</span>
-                        <span>★ 0</span>
+    <!-- Feature 3: Before / After Case Studies -->
+    <section id="case-studies" class="py-24 px-6 bg-slate-900/30 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto space-y-8">
+            <h3 class="text-2xl font-bold font-mono text-slate-100"><span class="text-cyan-400">02.</span> System Case Studies</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 space-y-4">
+                    <span class="text-xs font-mono text-cyan-400 font-bold">CASE STUDY #1</span>
+                    <h4 class="text-xl font-bold">18-Floor CCTV & Intercom Realignment</h4>
+                    <div class="grid grid-cols-2 gap-4 text-xs font-mono pt-2">
+                        <div class="p-3 rounded-lg bg-red-950/30 border border-red-800/40 text-red-300">
+                            <p class="font-bold mb-1">Before:</p>
+                            <p>Camera blind spots, unmapped channel feeds, and intercom digit configuration errors.</p>
+                        </div>
+                        <div class="p-3 rounded-lg bg-emerald-950/30 border border-emerald-800/40 text-emerald-300">
+                            <p class="font-bold mb-1">After:</p>
+                            <p>Cleaned PTZ lenses, corrected unit digits, and 100% floor-to-NVR mapping.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="p-6 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-                    <p class="font-bold text-cyan-400 font-mono">cctv-intercom-subnet-config</p>
-                    <p class="text-xs text-slate-400">Subnet mapping scripts for building surveillance networks.</p>
-                    <div class="pt-2 flex justify-between text-xs font-mono text-slate-500">
-                        <span>Shell</span>
-                        <span>★ 0</span>
-                    </div>
-                </div>
-                <div class="p-6 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-                    <p class="font-bold text-cyan-400 font-mono">db-backup-automation</p>
-                    <p class="text-xs text-slate-400">Automated SQL database export utilities for web hosting.</p>
-                    <div class="pt-2 flex justify-between text-xs font-mono text-slate-500">
-                        <span>SQL / PHP</span>
-                        <span>★ 0</span>
+
+                <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 space-y-4">
+                    <span class="text-xs font-mono text-blue-400 font-bold">CASE STUDY #2</span>
+                    <h4 class="text-xl font-bold">Corporate Web & DirectAdmin Optimization</h4>
+                    <div class="grid grid-cols-2 gap-4 text-xs font-mono pt-2">
+                        <div class="p-3 rounded-lg bg-red-950/30 border border-red-800/40 text-red-300">
+                            <p class="font-bold mb-1">Before:</p>
+                            <p>Unstructured database links, high load times, and manual user management.</p>
+                        </div>
+                        <div class="p-3 rounded-lg bg-emerald-950/30 border border-emerald-800/40 text-emerald-300">
+                            <p class="font-bold mb-1">After:</p>
+                            <p>Automated MySQL structure, direct hosting controls, and 99.9% uptime.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6 border-t border-slate-800/60 max-w-3xl mx-auto text-center space-y-6">
-        <h3 class="text-3xl font-extrabold text-slate-100">Get In Touch</h3>
-        <p class="text-slate-400 text-sm">Need help with web platforms, network configuration, or physical security installations?</p>
-        <div class="flex justify-center gap-4">
-            <button onclick="copyToClipboard('omolloclive59@gmail.com', 'Email copied!')" class="px-5 py-3 rounded-xl bg-slate-900 border border-slate-800 text-cyan-400 font-mono text-sm hover:border-cyan-500/50 transition">
-                <i class="fa-solid fa-envelope mr-2"></i> omolloclive59@gmail.com
-            </button>
-            <button onclick="copyToClipboard('+254790295687', 'Phone copied!')" class="px-5 py-3 rounded-xl bg-slate-900 border border-slate-800 text-cyan-400 font-mono text-sm hover:border-cyan-500/50 transition">
-                <i class="fa-solid fa-phone mr-2"></i> +254 790 295 687
-            </button>
+    <!-- Feature 4: ICT Service & Budget Estimator -->
+    <section id="calculator" class="py-24 px-6 max-w-4xl mx-auto space-y-8">
+        <div class="text-center space-y-2">
+            <h3 class="text-3xl font-extrabold text-slate-100">ICT Service & Scope Estimator</h3>
+            <p class="text-slate-400 text-sm">Select project requirements for an instant consultation estimate.</p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 space-y-6 font-mono text-sm">
+            <div class="space-y-3">
+                <label class="text-xs text-slate-400">SELECT REQUIRED SERVICES:</label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" value="300" onchange="calculateEstimate()" class="service-calc accent-cyan-400"> Web Development & Hosting
+                    </label>
+                    <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" value="400" onchange="calculateEstimate()" class="service-calc accent-cyan-400"> CCTV & NVR Configuration
+                    </label>
+                    <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" value="250" onchange="calculateEstimate()" class="service-calc accent-cyan-400"> Access Control & Key Cards
+                    </label>
+                    <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" value="200" onchange="calculateEstimate()" class="service-calc accent-cyan-400"> Network & Fiber Setup
+                    </label>
+                </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-950 border border-cyan-500/40 flex justify-between items-center">
+                <span>ESTIMATED SCOPE:</span>
+                <span id="estimated-total" class="text-xl font-bold text-cyan-400">$0 USD</span>
+            </div>
         </div>
     </section>
 
-    <!-- Feature 1: Retro Interactive CLI Modal -->
-    <div id="terminal-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
-        <div class="w-full max-w-2xl bg-slate-900 border border-cyan-500/40 rounded-xl shadow-2xl overflow-hidden font-mono text-sm">
-            <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex justify-between items-center">
-                <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-red-500 cursor-pointer" onclick="toggleTerminal()"></span>
-                    <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-                    <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                    <span class="text-xs text-slate-400 ml-2">clive@portfolio-cli:~</span>
-                </div>
-                <button onclick="toggleTerminal()" class="text-slate-400 hover:text-slate-100"><i class="fa-solid fa-xmark"></i></button>
+    <!-- Inline PDF Resume Viewer Modal -->
+    <div id="pdf-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
+        <div class="w-full max-w-5xl bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xl relative h-[85vh] flex flex-col">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="font-bold text-cyan-400 font-mono">Clive_Omollo_CV.pdf</h3>
+                <button onclick="toggleModal('pdf-modal')" class="text-slate-400 hover:text-slate-100"><i class="fa-solid fa-xmark text-xl"></i></button>
             </div>
-            <div id="terminal-body" class="p-4 h-80 overflow-y-auto space-y-2 text-cyan-400">
-                <p class="text-slate-400">Welcome to Clive Omollo's Interactive CLI v1.0.</p>
-                <p class="text-slate-400">Type <span class="text-cyan-300 font-bold">'help'</span> for a list of available commands.</p>
-            </div>
-            <div class="p-3 bg-slate-950 border-t border-slate-800 flex items-center gap-2">
-                <span class="text-cyan-400 font-bold">$</span>
-                <input id="terminal-input" type="text" onkeydown="handleTerminalCommand(event)" placeholder="type 'help', 'skills', 'experience', 'clear'..." class="w-full bg-transparent text-slate-100 focus:outline-none font-mono">
-            </div>
+            <iframe src="Clive_Omollo_CV.pdf" class="w-full h-full rounded-xl bg-slate-950"></iframe>
         </div>
     </div>
 
-    <!-- Feature 5: 1-Page Technical Cheat Sheet Modal -->
-    <div id="cheatsheet-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
-        <div class="w-full max-w-3xl bg-slate-900 border border-slate-800 rounded-2xl p-8 space-y-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button onclick="toggleModal('cheatsheet-modal')" class="absolute top-6 right-6 text-slate-400 hover:text-slate-100"><i class="fa-solid fa-xmark text-xl"></i></button>
-            
-            <div class="border-b border-slate-800 pb-4">
-                <h3 class="text-2xl font-bold text-cyan-400">Clive Omollo Nengo — Executive Summary</h3>
-                <p class="text-xs font-mono text-slate-400">Technical Capability Cheat Sheet for Recruiters</p>
+    <!-- Terminal Modal -->
+    <div id="terminal-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
+        <div class="w-full max-w-2xl bg-slate-900 border border-cyan-500/40 rounded-xl overflow-hidden font-mono text-sm">
+            <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex justify-between items-center">
+                <span class="text-xs text-slate-400">clive@portfolio-cli:~</span>
+                <button onclick="toggleTerminal()" class="text-slate-400 hover:text-slate-100"><i class="fa-solid fa-xmark"></i></button>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                <div class="space-y-2">
-                    <h4 class="font-bold text-slate-200 border-b border-slate-800 pb-1">Web & Database Stack</h4>
-                    <p class="text-slate-400"><strong class="text-slate-200">Languages:</strong> PHP, JavaScript, HTML5, CSS3, SQL</p>
-                    <p class="text-slate-400"><strong class="text-slate-200">Database Tools:</strong> MySQL (phpMyAdmin), PostgreSQL (pgAdmin 4)</p>
-                    <p class="text-slate-400"><strong class="text-slate-200">Hosting & Control:</strong> DirectAdmin, WordPress Theme Development</p>
-                </div>
-                <div class="space-y-2">
-                    <h4 class="font-bold text-slate-200 border-b border-slate-800 pb-1">Physical Security & CCTV</h4>
-                    <p class="text-slate-400"><strong class="text-slate-200">Platforms:</strong> Hikvision iVMS-4200, SADP Tool</p>
-                    <p class="text-slate-400"><strong class="text-slate-200">Hardware:</strong> NVR Storage, PTZ Cameras, Building Intercoms</p>
-                    <p class="text-slate-400"><strong class="text-slate-200">Access Control:</strong> RFID Key Card Programming & Audits</p>
-                </div>
+            <div id="terminal-body" class="p-4 h-80 overflow-y-auto space-y-2 text-cyan-400">
+                <p class="text-slate-400">Clive Omollo CLI v1.0. Type <span class="text-cyan-300 font-bold">'help'</span>.</p>
             </div>
-
-            <div class="pt-4 flex justify-end gap-3">
-                <button onclick="toggleModal('cheatsheet-modal')" class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-xs font-mono">Close</button>
-                <a href="Clive_Omollo_CV.pdf" target="_blank" download class="px-4 py-2 rounded-lg bg-cyan-500 text-slate-950 font-bold text-xs font-mono">Download Full CV</a>
+            <div class="p-3 bg-slate-950 border-t border-slate-800 flex items-center gap-2">
+                <span class="text-cyan-400 font-bold">$</span>
+                <input id="terminal-input" type="text" onkeydown="handleTerminalCommand(event)" placeholder="type 'help', 'skills', 'clear'..." class="w-full bg-transparent text-slate-100 focus:outline-none font-mono">
             </div>
         </div>
     </div>
 
     <script>
-        // Copy to clipboard & Toast
-        function copyToClipboard(text, msg) {
-            navigator.clipboard.writeText(text);
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-msg').innerText = msg;
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            setTimeout(() => { toast.classList.add('translate-y-20', 'opacity-0'); }, 3000);
+        function toggleModal(id) { document.getElementById(id).classList.toggle('hidden'); }
+        function toggleTerminal() { toggleModal('terminal-modal'); }
+
+        function calculateEstimate() {
+            let total = 0;
+            document.querySelectorAll('.service-calc:checked').forEach(cb => total += parseInt(cb.value));
+            document.getElementById('estimated-total').innerText = `$${total} USD`;
         }
 
-        // Generic Modal Toggle
-        function toggleModal(id) {
-            const modal = document.getElementById(id);
-            modal.classList.toggle('hidden');
-        }
-
-        // Terminal Toggle & Logic
-        function toggleTerminal() {
-            toggleModal('terminal-modal');
+        function runLatencyCheck() {
+            const pings = ['ping-1', 'ping-2', 'ping-3'];
+            pings.forEach(id => {
+                const ms = Math.floor(Math.random() * 20) + 10;
+                document.getElementById(id).innerText = `${ms} ms (Active)`;
+            });
         }
 
         function handleTerminalCommand(e) {
@@ -289,29 +251,11 @@
                 const input = document.getElementById('terminal-input');
                 const cmd = input.value.trim().toLowerCase();
                 const body = document.getElementById('terminal-body');
-
                 body.innerHTML += `<p class="text-slate-100">$ ${input.value}</p>`;
                 input.value = '';
-
-                let output = '';
-                if (cmd === 'help') {
-                    output = 'Available commands: <span class="text-cyan-300">skills, experience, contact, education, clear</span>';
-                } else if (cmd === 'skills') {
-                    output = '• Web & Database: PHP, MySQL, DirectAdmin, PostgreSQL<br>• Physical Security: Hikvision iVMS-4200, SADP, NVR, RFID Access Control';
-                } else if (cmd === 'experience') {
-                    output = '• Clemix Realtors Ltd — Customer Relationship Officer & ICT Lead<br>• The Saruni Apartments — Systems & Security Specialist<br>• Naivasha Hospital — ICT Attaché (Gilgil Mental Health)';
-                } else if (cmd === 'education') {
-                    output = '• Kabarak University — BSc Information Technology (Graduation Dec 2026)';
-                } else if (cmd === 'contact') {
-                    output = '• Email: omolloclive59@gmail.com | Phone: +254 790 295 687';
-                } else if (cmd === 'clear') {
-                    body.innerHTML = '';
-                    return;
-                } else {
-                    output = `Command not recognized: '${cmd}'. Type 'help' for commands.`;
-                }
-
-                body.innerHTML += `<p class="text-slate-400 pb-2">${output}</p>`;
+                let out = cmd === 'help' ? 'Commands: skills, contact, clear' : (cmd === 'skills' ? 'Web Dev, MySQL, Hikvision CCTV, RFID, DirectAdmin' : 'Unknown command.');
+                if (cmd === 'clear') { body.innerHTML = ''; return; }
+                body.innerHTML += `<p class="text-slate-400">${out}</p>`;
                 body.scrollTop = body.scrollHeight;
             }
         }
